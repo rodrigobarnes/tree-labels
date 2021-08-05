@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tree labels</title>
+    <style>
+        svg {
+            border:  1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="figure"></div>
+    <script language="javascript">
+        const svgns = 'http://www.w3.org/2000/svg';
+        const figureDiv = document.getElementById('figure');
+        const svgNode = document.createElementNS(svgns, 'svg');
+        svgNode.setAttributeNS(null, 'height', 15000);
+        svgNode.setAttributeNS(null, 'width', 1000);
+        // svgNode.setAttributeNS(null, 'viewBox', '0 0 900 28800');
+            
+        function makeTag(idx, fruit, type, variety, harvest) {
+            const yOffset = idx * 350;
+            const nodes = [];
+            const frame = document.createElementNS(svgns, 'polygon');
+            frame.setAttributeNS(null, 'style', 'fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0');
+            frame.setAttributeNS(null, 'points', `50,${yOffset + 50},750,${yOffset + 50},750,${yOffset + 350},50,${yOffset + 350}`);
+            nodes.push(frame);
+
+            const varietyLabel = document.createElementNS(svgns, 'text');
+            varietyLabel.setAttributeNS(null, 'x', 400);
+            varietyLabel.setAttributeNS(null, 'y', yOffset + 200);
+            varietyLabel.setAttributeNS(null, 'fill', 'black');
+            varietyLabel.setAttributeNS(null, 'font-size', "3.5em");
+            varietyLabel.setAttributeNS(null, 'text-anchor', "middle");
+            varietyLabel.setAttributeNS(null, 'font-family', "Helvetica");
+            const varietyText = document.createTextNode(variety);
+            varietyLabel.appendChild(varietyText);
+            nodes.push(varietyLabel);
+            
+            const harvestLabel = document.createElementNS(svgns, 'text');
+            harvestLabel.setAttributeNS(null, 'x', 700);
+            harvestLabel.setAttributeNS(null, 'y', yOffset + 300);
+            harvestLabel.setAttributeNS(null, 'fill', 'black');
+            harvestLabel.setAttributeNS(null, 'font-size', "2em");
+            harvestLabel.setAttributeNS(null, 'text-anchor', "end");
+            harvestLabel.setAttributeNS(null, 'font-family', "Helvetica");
+            const harvestText = document.createTextNode(harvest.toUpperCase());
+            harvestLabel.appendChild(harvestText);
+            nodes.push(harvestLabel);
+
+            const typeLabel = document.createElementNS(svgns, 'text');
+            typeLabel.setAttributeNS(null, 'x', 100);
+            typeLabel.setAttributeNS(null, 'y', yOffset + 300);
+            typeLabel.setAttributeNS(null, 'fill', 'black');
+            typeLabel.setAttributeNS(null, 'font-size', "2em");
+            typeLabel.setAttributeNS(null, 'font-family', "Helvetica");
+            const typeText = document.createTextNode(`${fruit[0].toUpperCase()} - ${type.toUpperCase()}`);
+            typeLabel.appendChild(typeText);
+            nodes.push(typeLabel);
+
+            const circle1 = document.createElementNS(svgns, 'circle');
+            circle1.setAttributeNS(null, 'stroke', 'black');
+            circle1.setAttributeNS(null, 'stroke-width', '3');
+            circle1.setAttributeNS(null, 'fill', "white");
+            circle1.setAttributeNS(null, 'cx', 100);
+            circle1.setAttributeNS(null, 'cy', yOffset + 100);
+            circle1.setAttributeNS(null, 'r', "20");
+            nodes.push(circle1);
+
+            const circle2 = document.createElementNS(svgns, 'circle');
+            circle2.setAttributeNS(null, 'stroke', 'black');
+            circle2.setAttributeNS(null, 'stroke-width', '3');
+            circle2.setAttributeNS(null, 'fill', "white");
+            circle2.setAttributeNS(null, 'cx', 700);
+            circle2.setAttributeNS(null, 'cy', yOffset + 100);
+            circle2.setAttributeNS(null, 'r', "20");
+            nodes.push(circle2);
+
+            return nodes
+        }
+
+        function processTrees(data) {
+            for (idx in data) {
+                const tree = data[idx];
+                const nodes = makeTag(idx, tree['fruit'], tree['type'], tree['variety'], tree['harvest']);
+                for (node_idx in nodes){
+                    svgNode.appendChild(nodes[node_idx]);
+                }
+            }   
+        }
+
+        figureDiv.appendChild(svgNode);
+
+        fetch("./trees.json")
+            .then(response => {
+               return response.json();
+            })
+            .then(data => processTrees(data));
+    </script>
+</body>
+</html>

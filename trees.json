@@ -2,7 +2,7 @@
     {
         "fruit": "Apple",
         "variety": "Aird Cairn Russet",
-        "harvest": "early-mid Oct",
+        "harvest": "early - mid Oct",
         "type": "eater",
         "quantity": "1"
     },
@@ -23,14 +23,14 @@
     {
         "fruit": "Apple",
         "variety": "Bloody Ploughman",
-        "harvest": "late Sep - early Oct",
+        "harvest": "early - mid Sept",
         "type": "eater",
         "quantity": "4"
     },
     {
         "fruit": "Apple",
         "variety": "Charles Ross",
-        "harvest": "early-mid Sep",
+        "harvest": "early - mid Sept",
         "type": "eater/cooker",
         "quantity": "6"
     },
@@ -58,105 +58,105 @@
     {
         "fruit": "Apple",
         "variety": "Crawley Beauty",
-        "harvest": "early-mid Oct",
+        "harvest": "early - mid Oct",
         "type": "cooker",
         "quantity": "1"
     },
     {
         "fruit": "Apple",
         "variety": "Cutler Grieve",
-        "harvest": "early-mid Sep",
+        "harvest": "early - mid Sept",
         "type": "eater",
         "quantity": "2"
     },
     {
         "fruit": "Apple",
         "variety": "Discovery",
-        "harvest": "late Aug - early Sep",
+        "harvest": "late Aug - early Sept",
         "type": "eater",
         "quantity": "2"
     },
     {
         "fruit": "Apple",
         "variety": "Egremont Russet",
-        "harvest": "early-mid Oct",
+        "harvest": "early - mid Oct",
         "type": "eater",
         "quantity": "9"
     },
     {
         "fruit": "Apple",
         "variety": "Galloway Pippin",
-        "harvest": "mid-late Sep",
+        "harvest": "mid - late Sept",
         "type": "eater/cooker",
         "quantity": "1"
     },
     {
         "fruit": "Apple",
         "variety": "Katy",
-        "harvest": "early-mid Sep",
+        "harvest": "late Aug - early Sept",
         "type": "eater",
         "quantity": "9"
     },
     {
         "fruit": "Apple",
         "variety": "Laxton's Fortune",
-        "harvest": "early-mid Sep",
+        "harvest": "early - mid Sept",
         "type": "eater",
         "quantity": "8"
     },
     {
         "fruit": "Apple",
         "variety": "Meridian",
-        "harvest": "mid-late Sep",
+        "harvest": "mid - late Sept",
         "type": "eater",
         "quantity": "9"
     },
     {
         "fruit": "Apple",
         "variety": "Red Sleeves",
-        "harvest": "early-mid Sep",
+        "harvest": "early - mid Sept",
         "type": "eater",
         "quantity": "2"
     },
     {
         "fruit": "Apple",
         "variety": "Scotch Bridget",
-        "harvest": "early-mid Oct",
+        "harvest": "early - mid Oct",
         "type": "cooker/juicer",
         "quantity": "3"
     },
     {
         "fruit": "Apple",
         "variety": "Scotch Dumpling",
-        "harvest": "late Aug - early Sep",
+        "harvest": "mid - late Aug ",
         "type": "cooker",
         "quantity": "3"
     },
     {
         "fruit": "Apple",
         "variety": "Stobo Castle",
-        "harvest": "late Aug - early Sep",
+        "harvest": "late Aug - early Sept",
         "type": "cooker",
         "quantity": "2"
     },
     {
         "fruit": "Apple",
         "variety": "Sunset",
-        "harvest": "late Sep - early Oct",
+        "harvest": "late Sept - early Oct",
         "type": "juicer",
         "quantity": "9"
     },
     {
         "fruit": "Apple",
         "variety": "Tydemans Late Orange",
-        "harvest": "early-mid Oct",
+        "harvest": "early - mid Oct",
         "type": "eater/juicer",
         "quantity": "1"
     },
     {
         "fruit": "Apple",
         "variety": "Worcester Pearmain",
-        "harvest": "early-mid Sep",
+        "harvest": "early - mid Sept",
         "type": "eater",
         "quantity": "7"
     },
@@ -165,14 +165,14 @@
         "variety": "Concorde",
         "harvest": "week 1 Oct",
         "type": "eater",
-        "quantity": "1"
+        "quantity": "2"
     },
     {
         "fruit": "Pear",
         "variety": "Conference",
         "harvest": "week 1 Oct",
         "type": "eater",
-        "quantity": "3"
+        "quantity": "4"
     },
     {
         "fruit": "Pear",
@@ -191,29 +191,57 @@
     {
         "fruit": "Pear",
         "variety": "Drummond (red pear)",
-        "harvest": "Oct",
+        "harvest": "October",
         "type": "eater",
         "quantity": "1"
     },
     {
         "fruit": "Plum",
         "variety": "Victoria",
-        "harvest": "Aug",
+        "harvest": "late Aug - early Sept",
         "type": "eater",
         "quantity": "5"
     },
     {
         "fruit": "Plum",
         "variety": "Marjorie's Seedling",
-        "harvest": "Sep",
+        "harvest": "September",
         "type": "eater",
         "quantity": "5"
     },
     {
         "fruit": "Apple",
         "variety": "Apple",
-        "harvest": "",
-        "type": "",
+        "harvest": "late Sept",
+        "type": "eater",
         "quantity": "8"
+    },
+    {
+        "fruit": "Pear",
+        "variety": "Pear",
+        "harvest": "early Oct",
+        "type": "eater",
+        "quantity": "2"
+    },
+    {
+        "fruit": "Greengage",
+        "variety": "Greengage",
+        "harvest": "mid - late Aug",
+        "type": "eater",
+        "quantity": "2"
+    },
+    {
+        "fruit": "Crab Apple",
+        "variety": "John DownieSeptember",
+        "harvest": "",
+        "type": "cooker",
+        "quantity": "8"
+    },
+    {
+        "fruit": "Nut",
+        "variety": "Walnut",
+        "harvest": "October",
+        "type": "eater",
+        "quantity": "6"
     }
 ]

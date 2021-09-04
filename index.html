@@ -8,17 +8,30 @@
             border:  1px solid black;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="navigation1"></div>
     <div id="figure"></div>
+    <div id="navigation2"></div>
     <script language="javascript">
+        // via https://stackoverflow.com/questions/23218174/how-do-i-save-export-an-svg-file-after-creating-an-svg-with-d3-js-ie-safari-an
+        function saveSvg(svgEl, name) {
+            svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+            var svgData = svgEl.outerHTML;
+            var preface = '<?xml version="1.0" standalone="no"?>\r\n';
+            var svgBlob = new Blob([preface, svgData], {type:"image/svg+xml;charset=utf-8"});
+            var svgUrl = URL.createObjectURL(svgBlob);
+            var downloadLink = document.createElement("a");
+            downloadLink.href = svgUrl;
+            downloadLink.download = name;
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+
         const svgns = 'http://www.w3.org/2000/svg';
-        const figureDiv = document.getElementById('figure');
-        const svgNode = document.createElementNS(svgns, 'svg');
-        svgNode.setAttributeNS(null, 'height', 15000);
-        svgNode.setAttributeNS(null, 'width', 1000);
-        // svgNode.setAttributeNS(null, 'viewBox', '0 0 900 28800');
-            
+        
         function makeTag(idx, fruit, type, variety, harvest) {
             const yOffset = idx * 350;
             const nodes = [];
@@ -81,6 +94,11 @@
         }
 
         function processTrees(data) {
+            const svgNode = document.createElementNS(svgns, 'svg');
+            svgNode.setAttributeNS(null, 'height', 2000);
+            svgNode.setAttributeNS(null, 'width', 1000);
+            // svgNode.setAttributeNS(null, 'viewBox', '0 0 900 28800');
+        
             for (idx in data) {
                 const tree = data[idx];
                 const nodes = makeTag(idx, tree['fruit'], tree['type'], tree['variety'], tree['harvest']);
@@ -88,15 +106,63 @@
                     svgNode.appendChild(nodes[node_idx]);
                 }
             }   
+
+            return svgNode;
         }
 
-        figureDiv.appendChild(svgNode);
 
-        fetch("./trees.json")
+        fetch("/trees.json")
             .then(response => {
                return response.json();
             })
-            .then(data => processTrees(data));
+            .then(function(data) {
+                const page_size = 5;
+                const trees = data; // _.flatten(data.map(t => Array(parseInt(t["quantity"])).fill(t)));
+                const size = trees.length;
+    
+                const total_pages = Math.round(size / page_size) + (size % page_size > 0 ? 1 : 0);
+    
+                const url_params = new URLSearchParams(window.location.search);
+                var page = url_params.has('p') ? parseInt(url_params.get('p')) : 1;
+
+                if (page < 1) {
+                    window.location.replace("?p=1");
+                }
+                else if (page > total_pages) {
+                    window.location.replace(`?p=${total_pages}`);   
+                }
+
+                const prev_page = Math.max(1, page - 1);
+                const next_page = Math.min(total_pages, page + 1);
+
+
+                const start     = (page - 1) * page_size;
+                const finish    = (page - 1) * page_size + page_size;
+                const page_data = trees.slice(start, finish);
+
+                console.log(page, start, finish, page_data.length);
+
+                const navigation_html = `
+                    <a href="?p=1">First</a> 
+                    &lt; <a href="?p=${prev_page}">Previous</a> 
+                    (Page ${page} of ${total_pages}) 
+                    <a href=?p=${next_page}>Next</a> &gt; 
+                    <a href="?p=${total_pages}">Last</a>
+                    `
+                // console.log(navigation_html);
+
+                const navigation1 = document.getElementById('navigation1');
+                navigation1.innerHTML = navigation_html;
+                const navigation2 = document.getElementById('navigation2');
+                navigation2.innerHTML = navigation_html;
+
+                // add the updated SVG node
+                const figureDiv = document.getElementById('figure');
+                figureDiv.appendChild(processTrees(page_data));
+
+                saveSvg(figureDiv.firstChild, `page-${page}.svg`)
+
+            })
     </script>
 </body>
 </html>

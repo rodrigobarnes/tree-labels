@@ -1,32 +1,36 @@
 fruit,variety,harvest,type,quantity
-Apple,Aird Cairn Russet,early-mid Oct,eater,1
+Apple,Aird Cairn Russet,early - mid Oct,eater,1
 Apple,Beauty of Moray,late Aug - early Sep,cooker,4
 Apple,Blenheim Orange,late Sep - early Oct,eater,2
-Apple,Bloody Ploughman,late Sep - early Oct,eater,4
-Apple,Charles Ross,early-mid Sep,eater/cooker,6
+Apple,Bloody Ploughman,early - mid Sept,eater,4
+Apple,Charles Ross,early - mid Sept,eater/cooker,6
 Apple,Chivers Delight,late Sep - early Oct,eater,1
 Apple,Christmas Pippin,late Sep - early Oct,eater,1
 Apple,Cox,late Sep - early Oct,eater,8
-Apple,Crawley Beauty,early-mid Oct,cooker,1
-Apple,Cutler Grieve,early-mid Sep,eater,2
-Apple,Discovery,late Aug - early Sep,eater,2
-Apple,Egremont Russet,early-mid Oct,eater,9
-Apple,Galloway Pippin,mid-late Sep,eater/cooker,1
-Apple,Katy,early-mid Sep,eater,9
-Apple,Laxton's Fortune,early-mid Sep,eater,8
-Apple,Meridian,mid-late Sep,eater,9
-Apple,Red Sleeves,early-mid Sep,eater,2
-Apple,Scotch Bridget,early-mid Oct,cooker/juicer,3
-Apple,Scotch Dumpling,late Aug - early Sep,cooker,3
-Apple,Stobo Castle,late Aug - early Sep,cooker,2
-Apple,Sunset,late Sep - early Oct,juicer,9
-Apple,Tydemans Late Orange,early-mid Oct,eater/juicer,1
-Apple,Worcester Pearmain,early-mid Sep,eater,7
-Pear,Concorde,week 1 Oct,eater,1
-Pear,Conference,week 1 Oct,eater,3
+Apple,Crawley Beauty,early - mid Oct,cooker,1
+Apple,Cutler Grieve,early - mid Sept,eater,2
+Apple,Discovery,late Aug - early Sept,eater,2
+Apple,Egremont Russet,early - mid Oct,eater,9
+Apple,Galloway Pippin,mid - late Sept,eater/cooker,1
+Apple,Katy,late Aug - early Sept,eater,9
+Apple,Laxton's Fortune,early - mid Sept,eater,8
+Apple,Meridian,mid - late Sept,eater,9
+Apple,Red Sleeves,early - mid Sept,eater,2
+Apple,Scotch Bridget,early - mid Oct,cooker/juicer,3
+Apple,Scotch Dumpling,mid - late Aug ,cooker,3
+Apple,Stobo Castle,late Aug - early Sept,cooker,2
+Apple,Sunset,late Sept - early Oct,juicer,9
+Apple,Tydemans Late Orange,early - mid Oct,eater/juicer,1
+Apple,Worcester Pearmain,early - mid Sept,eater,7
+Pear,Concorde,week 1 Oct,eater,2
+Pear,Conference,week 1 Oct,eater,4
 Pear,Doyenne du Comice,week 2 Oct,eater,1
 Pear,Beurre Hardy,week 3 Oct,eater,1
-Pear,Drummond (red pear),Oct,eater,1
-Plum,Victoria,Aug,eater,5
-Plum,Marjorie's Seedling,Sep,eater,5
-Apple,Apple,,,8
+Pear,Drummond (red pear),October,eater,1
+Plum,Victoria,late Aug - early Sept,eater,5
+Plum,Marjorie's Seedling,September,eater,5
+Apple,Apple,late Sept,eater,8
+Pear,Pear,early Oct,eater,2
+Greengage,Greengage,mid - late Aug,eater,2
+Crab Apple,John DownieSeptember,,cooker,8
+Nut,Walnut,October,eater,6
